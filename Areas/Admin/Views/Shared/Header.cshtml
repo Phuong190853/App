@@ -1,0 +1,66 @@
+﻿
+
+<div class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-left" id="cbp-spmenu-s1">
+    <!--left-fixed -navigation-->
+    <aside class="sidebar-left">
+        <nav class="navbar navbar-inverse">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".collapse" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <h1><a class="navbar-brand" href="index.html"><img src="https://www.fpt.com.vn/Content/home/images/icon/ic-logo.png" alt="" style="height: 50px"></a></h1>
+            </div>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="sidebar-menu">
+                    <li class="header">MAIN NAVIGATION</li>
+                    <li class="">
+                        <a href="@Url.Action("Index", "Accounts")">
+                            <i class="fa fa-table"></i>
+                            <span>Account Management</span>
+                        </a>
+                    </li>
+                    <li class="treeview">
+                        <a href="@Url.Action("Create", "Accounts")">
+                            <i class="fa fa-edit"></i>
+                            <span>Add Account</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </nav>
+    </aside>
+</div>
+<!--left-fixed -navigation-->
+<!-- header-starts -->
+<div class="sticky-header header-section ">
+    <div class="header-left">
+        <div class="clearfix"> </div>
+    </div>
+    <div class="header-right">
+        <div class="profile_details">
+            <ul>
+                <li class="dropdown profile_details_drop">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                        <div class="profile_img">
+                            <div class="user-name">
+                                <p>Welcome Admin</p>
+                            </div>
+                            <i class="fa fa-angle-down lnr"></i>
+                            <i class="fa fa-angle-up lnr"></i>
+                            <div class="clearfix"></div>
+                        </div>
+                    </a>
+                    <ul class="dropdown-menu drp-mnu">
+                        <li> <a href="@Url.Action("Logout", "Home", new { area = "" })"><i class="fa fa-sign-out"></i> Logout</a> </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="clearfix"> </div>
+    </div>
+    <div class="clearfix"> </div>
+</div>

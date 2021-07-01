@@ -1,0 +1,47 @@
+﻿@model Asm.Models.Entities.Course
+
+@{
+    ViewBag.Title = "Assigned";
+    Layout = "~/Areas/Staff/Views/Shared/_MyLayout.cshtml";
+}
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class=" form-grids row form-grids-right">
+        <div class="widget-shadow " data-example-id="basic-forms">
+            <div class="form-title">
+                <h4>Assigned Course</h4>
+            </div>
+
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            @Html.HiddenFor(model => model.CourseID)
+
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            @Html.HiddenFor(model => model.CourseName)
+
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            @Html.HiddenFor(model => model.Description)
+
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            @Html.HiddenFor(model => model.CatID)
+
+
+            <div class="form-body form-horizontal">
+                <form class="form-horizontal">
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.TrainerID, "TrainerID", htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-sm-9">
+                            @Html.DropDownList("TrainerID", null, "", htmlAttributes: new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.TrainerID, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <div class="col-sm-offset-2">
+                        <button type="submit" class="btn btn-warning">SUBMIT</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+}

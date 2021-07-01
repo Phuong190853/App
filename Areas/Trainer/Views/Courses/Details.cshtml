@@ -1,0 +1,36 @@
+﻿@model IEnumerable<Asm.Models.Entities.Assigned_Course>
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/Trainer/Views/Shared/_MyLayout.cshtml";
+}
+
+
+<h2> </h2>
+
+<div class="bs-example widget-shadow" data-example-id="hoverable-table">
+    <br />
+    <h3 style="margin-left:20px;"> @ViewBag.courseName</h3>
+    <p style="margin-left:20px; color:gray">Category: @ViewBag.courseCategory</p>
+    <p style="margin-left:20px; color:gray">Trainer: @ViewBag.name</p>
+    <hr />
+    <table class="table " style="width:95%; margin-left:20px; padding-bottom:10px">
+        <thead>
+            <tr>
+                <th>@Html.DisplayNameFor(model => model.Account.Name)</th>
+                <th>@Html.DisplayNameFor(model => model.Account.Email)</th>
+                <th>@Html.DisplayNameFor(model => model.Account.PhoneNo)</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr class="active">
+                    <td style="background-color:white">@Html.DisplayFor(modelItem => item.Account.Name)</td>
+                    <td style="background-color:white">@Html.DisplayFor(modelItem => item.Account.Email)</td>
+                    <td style="background-color:white">@Html.DisplayFor(modelItem => item.Account.PhoneNo)</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

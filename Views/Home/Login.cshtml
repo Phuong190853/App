@@ -1,0 +1,41 @@
+﻿@model Asm.Models.Entities.Account
+@{
+    Layout = null;
+}
+
+<head>
+    <title>Training Activity Management</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/bootstrap")
+
+</head>
+
+<div class="main-page login-page ">
+    <h2 class="title1">Login</h2>
+    <div class="widget-shadow">
+        <div class="login-body">
+            @using (Html.BeginForm("LoginProcess", "Home"))
+            {
+                <div class="form-group">
+                    @Html.LabelFor(m => m.Email)
+                    @Html.TextBoxFor(m => m.Email, new { @class = "form-control", @placeholder = "      Email" })
+
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(m => m.Password)
+                    @Html.PasswordFor(m => m.Password, new { @class = "form-control", @placeholder = "Password" })
+                </div>
+                <div class="form-group">
+                    <input type="submit" name="submit" class="btn btn-primary" value="Login" />
+                    <p style="color:red">@ViewBag.error</p>
+                </div>
+
+            }
+        </div>
+    </div>
+
+</div>
+

@@ -1,0 +1,36 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Training Activity Management</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/bootstrap")
+
+</head>
+<body class="cbp-spmenu-push">
+    <div class="main-content">
+        @Html.Partial("Header")
+
+        <!-- //header-ends -->
+        <!-- main content start-->
+        <div id="page-wrapper">
+            <div class="main-page">
+                <div class="charts">
+                    @RenderBody()
+                </div>
+            </div>
+        </div>
+        <!--footer-->
+
+        <div class="footer">
+            <p>&copy; Copyright @@2021</p>
+        </div>
+
+        <!--//footer-->
+    </div>
+
+
+</body>
+</html>

@@ -1,0 +1,45 @@
+﻿
+@{
+    ViewBag.Title = "Welcome";
+    Layout = "~/Areas/Trainer/Views/Shared/_MyLayout.cshtml";
+}
+
+<style>
+    * {
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: Arial;
+        font-size: 17px;
+    }
+
+    .container {
+        position: relative;
+        max-width: 1000px;
+        margin: 0 auto;
+    }
+
+        .container img {
+            vertical-align: middle;
+        }
+
+        .container .content {
+            position: absolute;
+            bottom: 0;
+            background: rgb(0, 0, 0); /* Fallback color */
+            background: rgba(0, 0, 0, 0.5); /* Black background with 0.5 opacity */
+            color: #f1f1f1;
+            width: 97%;
+            padding: 20px;
+            margin-left: -1px;
+        }
+</style>
+
+<div class="container">
+    <img src="~/Content/img/me-pembroke-ext002.jpg" alt="Notebook" style="width:100%;">
+    <div class="content">
+        <h1 style="text-align:center; margin-top:100px">Welcome to Management System!</h1>
+    </div>
+</div>
+
