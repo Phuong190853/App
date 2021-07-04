@@ -1,9 +1,10 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using Asm.Models.Entities;
+using Asm.Models.Entity;
+
 
 namespace Asm.Controllers
 {
@@ -13,7 +14,7 @@ namespace Asm.Controllers
         {
             return View();
         }
-        Manage_Context db = new Manage_Context();
+        Manages_Context db = new Manages_Context();
         public ActionResult Login()
         {
             return View();
@@ -56,23 +57,6 @@ namespace Asm.Controllers
 
             return View();
         }
-
-        //public ActionResult AdminArea()
-        //{
-        //    return RedirectToAction("Index", "Login", new { area = "Admin" });
-        //}
-        //public ActionResult StaffArea()
-        //{
-        //    return RedirectToAction("Login", "Login", new { area = "Staff" });
-        //}
-        //public ActionResult TrainerArea()
-        //{
-        //    return RedirectToAction("Login", "Login", new { area = "Trainers" });
-        //}
-        //public ActionResult TraineeArea()
-        //{
-        //    return RedirectToAction("Login", "Login", new { area = "Trainees" });
-        //}
 
         public ActionResult Logout()
         {
