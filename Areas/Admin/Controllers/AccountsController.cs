@@ -6,7 +6,7 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
-using Asm.Models.Entities;
+using Asm.Models.Entity;
 
 namespace Asm.Areas.Admin.Controllers
 {
@@ -103,6 +103,8 @@ namespace Asm.Areas.Admin.Controllers
         public ActionResult Delete(int? id)
         {
             var model = db.Accounts.Where(x => x.AccID == id).FirstOrDefault();
+            var model1 = db.Courses.Where(x => x.TrainerID == id).FirstOrDefault();
+            model1.TrainerID = null;
             if (model != null)
             {
                 db.Accounts.Remove(model);
