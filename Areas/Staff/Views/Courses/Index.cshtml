@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Asm.Models.Entities.Course>
+@model IEnumerable<Asm.Models.Entity.Course>
 
 @{
     ViewBag.Title = "Index";
@@ -31,7 +31,7 @@
         <thead>
             <tr>
                 <th>@Html.DisplayNameFor(model => model.CourseName)</th>
-                <th>@Html.DisplayNameFor(model => model.CourseCategory.Name)</th>
+                <th>Category</th>
                 <th>@Html.DisplayNameFor(model => model.Description)</th>
                 <th></th>
             </tr>
