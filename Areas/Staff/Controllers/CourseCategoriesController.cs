@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
@@ -6,13 +6,14 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
-using Asm.Models.Entities;
+
+using Asm.Models.Entity;
 
 namespace Asm.Areas.Staff.Controllers
 {
     public class CourseCategoriesController : Controller
     {
-        private Manage_Context db = new Manage_Context();
+        private Manages_Context db = new Manages_Context();
 
         // GET: Staff/CourseCategories
         public ActionResult Index()
@@ -20,9 +21,6 @@ namespace Asm.Areas.Staff.Controllers
             return View(db.CourseCategories.ToList());
         }
 
-        // GET: Staff/CourseCategories/Details/5
-
-        // GET: Staff/CourseCategories/Create
         public ActionResult Create()
         {
             return View();
@@ -61,8 +59,6 @@ namespace Asm.Areas.Staff.Controllers
         }
 
         // POST: Staff/CourseCategories/Edit/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "CourseCatID,Name,Description")] CourseCategory courseCategory)
@@ -80,9 +76,14 @@ namespace Asm.Areas.Staff.Controllers
         public ActionResult Delete(int? id)
         {
             var model = db.CourseCategories.Where(x => x.CourseCatID == id).FirstOrDefault();
+            var model1 = db.Courses.Where(x => x.CatID == id).FirstOrDefault();
             if (model != null)
             {
                 db.CourseCategories.Remove(model);
+                if(model1 != null)
+                {
+                    db.Courses.Remove(model1);
+                }
                 db.SaveChanges();
 
                 return RedirectToAction("Index");
