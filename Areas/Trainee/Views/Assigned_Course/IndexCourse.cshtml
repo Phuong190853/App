@@ -1,0 +1,24 @@
+﻿@model IEnumerable<Asm.Models.Entity.Course>
+
+@{
+    ViewBag.Title = "IndexCourse";
+    Layout = "~/Areas/Trainee/Views/Shared/_MyLayout.cshtml";
+}
+<h2>Available Course</h2>
+<br />
+
+<ul style="list-style:none;display:inline-block;">
+    @foreach (var item in Model)
+    {
+        <li style="display:inline-block; margin-right:100px;margin-bottom:20px">
+            <div class="card" style=" border-color:lightgray; border-style: solid; border-width:1px; width:345px; ">
+                <img class="card-img-top" src="https://www.fpt.com.vn/Content/home/images/img/fptf4.jpg" style="height:200px">
+                <div class="card-body" style="text-align:center; margin-top:20px">
+                    <h4 class="card-title" style="font-weight:bold; ">@Html.DisplayFor(modelItem => item.CourseName)</h4>
+                    <p class="card-text" style="margin-top:20px; margin-bottom:10px">Trainer: @Html.DisplayFor(modelItem => item.Account.Name)</p>
+                </div>
+                <br />
+            </div>
+        </li>
+    }
+</ul>
