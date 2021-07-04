@@ -1,4 +1,4 @@
-﻿using System.Web;
+using System.Web;
 using System.Web.Optimization;
 
 namespace Asm
@@ -19,7 +19,7 @@ namespace Asm
             bundles.Add(new ScriptBundle("~/bundles/modernizr").Include(
                         "~/Scripts/modernizr-*"));
 
-            bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
+            bundles.Add(new ScriptBundle("~/bundles/bootstrapfile").Include(
                       "~/Scripts/js/bootstrap.js",
                       "~/Scripts/js/custom.js",
                       "~/Scripts/js/jquery-1.11.1.min.js",
@@ -28,13 +28,15 @@ namespace Asm
 
                       ));
 
-            bundles.Add(new StyleBundle("~/Content/css").Include(
+            bundles.Add(new StyleBundle("~/Content/cssfile").Include(
                       "~/Content/css/bootstrap.css",
                       "~/Content/css/style.css",
                       "~/Content/css/font-awesome.css",
                       "~/Content/css/SidebarNav.min.css",
                       "~/Content/css/custom.css"
                       ));
+
+            BundleTable.EnableOptimizations = true;
         }
     }
 }
