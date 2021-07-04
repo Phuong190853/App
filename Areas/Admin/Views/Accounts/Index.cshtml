@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Asm.Models.Entities.Account>
+@model IEnumerable<Asm.Models.Entity.Account>
 
 @{
     ViewBag.Title = "Index";
@@ -61,7 +61,7 @@
                         @Html.ActionLink("Edit", "Edit", new { id = item.AccID }) |
                         <a id="deleteItem" class="deleteItem" data-target="#basic"
                            data-toggle="modal"
-                           data-path="@Url.Action("Delete", "Accounts", new { id = @item.AccID })" style="cursor:pointer">Delete</a>
+                           data-path="@Url.Action("Delete", "Accounts", new { id = item.AccID })" style="cursor:pointer">Delete</a>
                     </td>
                 </tr>
             }
