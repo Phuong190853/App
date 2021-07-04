@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
@@ -6,13 +6,15 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
-using Asm.Models.Entities;
+
+using Asm.Models.Entity;
 
 namespace Asm.Areas.Trainer.Controllers
 {
     public class AccountsController : Controller
     {
-        private Manage_Context db = new Manage_Context();
+        private Manages_Context db = new Manages_Context();
+        //private Model1 db = new Model1();
 
         public ActionResult Welcome()
         {
@@ -21,9 +23,6 @@ namespace Asm.Areas.Trainer.Controllers
         // GET: Trainer/Accounts
         public ActionResult Index()
         {
-            //var accounts = db.Accounts.Include(a => a.Role1);
-            //return View(accounts.ToList());
-
             int sessionID = Convert.ToInt32(Session["AccountID"].ToString());
             var trainers = db.Accounts.Where(t => t.AccID.Equals(sessionID));
             return View(trainers.ToList());
@@ -77,7 +76,6 @@ namespace Asm.Areas.Trainer.Controllers
             {
                 return HttpNotFound();
             }
-            //ViewBag.AccountID = new SelectList(db.Accounts, "AccountID", "Email", trainer.AccountID);
             return View(acc);
         }
         [HttpPost]
