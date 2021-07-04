@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
@@ -6,13 +6,15 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
-using Asm.Models.Entities;
+
+using Asm.Models.Entity;
 
 namespace Asm.Areas.Staff.Controllers
 {
     public class CoursesController : Controller
     {
-        private Manage_Context db = new Manage_Context();
+        private Manages_Context db = new Manages_Context();
+        //private Model1 db = new Model1();
 
         // GET: Staff/Courses
         public ActionResult Index()
@@ -144,9 +146,14 @@ namespace Asm.Areas.Staff.Controllers
         public ActionResult Delete(int? id)
         {
             var model = db.Courses.Where(x => x.CourseID == id).FirstOrDefault();
+            var model1 = db.Assigned_Course.Where(x => x.CourseID == id).FirstOrDefault();
             if (model != null)
             {
                 db.Courses.Remove(model);
+                if(model1 != null)
+                {
+                    db.Assigned_Course.Remove(model1);
+                }
                 db.SaveChanges();
 
                 return RedirectToAction("Index");
