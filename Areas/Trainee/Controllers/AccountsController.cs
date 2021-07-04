@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
@@ -6,13 +6,15 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
-using Asm.Models.Entities;
+
+using Asm.Models.Entity;
 
 namespace Asm.Areas.Trainee.Controllers
 {
     public class AccountsController : Controller
     {
-        private Manage_Context db = new Manage_Context();
+        private Manages_Context db = new Manages_Context();
+        //private Model1 db = new Model1();
 
         public ActionResult Welcome()
         {
